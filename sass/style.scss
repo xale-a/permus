@@ -73,7 +73,6 @@ body {
   font-family: $font-display;
   font-size: 2.5rem;
   color: $color-accent;
-  // filter: drop-shadow(0 0.5rem 1rem rgba($color-accent, 0.5));
 }
 
 .heading-teriary {
@@ -81,8 +80,6 @@ body {
   font-family: $font-display;
   font-size: 1.5rem;
   transition: transform 200ms;
-
-  // filter: drop-shadow(0 0.5rem 1rem rgba($color-dark, 0.35));
 
   &:hover {
     color: $color-accent;
@@ -99,7 +96,6 @@ body {
     padding: 1em 2em;
     border-radius: 3px;
     font-size: 1.4rem;
-    // font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
     transition: all 200ms;
@@ -131,6 +127,7 @@ body {
   background-color: $color-light;
   color: initial;
   box-shadow: 0 0.7rem 2rem rgba($color-accent, 0.4);
+  transition: all 200ms;
 
   &__img {
     margin-bottom: 0.5rem;
@@ -149,6 +146,10 @@ body {
 
   &__text {
     font-size: 0.75rem;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -241,28 +242,24 @@ body {
 /******** About Section *********/
 
 .section-about {
-  display: flex;
-  justify-content: space-around;
-  padding: 5rem 2rem;
+  margin: 5rem 13rem;
+  padding: 5rem;
+  border: 3px solid $color-dark;
+  position: relative;
+}
 
-  &__bass-clef {
-    align-self: end;
+.bass-clef {
+  &__wrap {
+    position: absolute;
+    bottom: 0;
+    left: -6.5rem;
     width: 14rem;
-    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, .35));
-    transform: rotate(3deg);
-    transition: transform 200ms;
-
-    &:hover {
-      fill: $color-accent;
-      transform: rotate(-5deg) scale(1.1);
-    }
+    background-color: $color-light;
   }
 
-  &__treble-clef {
-    align-self: start;
-    width: 10rem;
+  &__icon {
     filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, .35));
-    transform: rotate(-6deg);
+    // transform: rotate(3deg);
     transition: transform 200ms;
 
     &:hover {
@@ -270,9 +267,29 @@ body {
       transform: rotate(6deg) scale(1.1);
     }
   }
+}
 
-  &__main {
-    padding: 5rem 3rem;
+.treble-clef {
+  &__wrap {
+    position: absolute;
+    top: 0;
+    right: -5rem;
+    background-color: $color-light;
+    padding-top: 1.3rem;
+    width: 10rem;
+    height: 18.5rem;
+  }
+
+  &__icon {
+    align-self: start;
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, .35));
+    // transform: rotate(-6deg);
+    transition: transform 200ms;
+
+    &:hover {
+      fill: $color-accent;
+      transform: rotate(-6deg) scale(1.1);
+    }
   }
 }
 
@@ -312,6 +329,7 @@ body {
     &--1 {
       z-index: 8;
       left: 12rem;
+      transform: scale(0.95);
     }
 
     &--2 {
@@ -322,7 +340,9 @@ body {
     &--3 {
       z-index: 9;
       top: 3rem;
-      right: 11rem;
+      right: 12rem;
+      transform: scale(0.97);
+
     }
   }
 }
@@ -337,7 +357,7 @@ body {
 
 .stories {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, minmax(14rem, 1fr));
   column-gap: 10%;
   row-gap: 2.5rem;
   margin-bottom: 3rem;
@@ -386,14 +406,44 @@ body {
 /**** Recommendations Section ***/
 
 .section-recommendations {
-  padding: 3rem 13% 6.5rem;
+  padding: 3rem 3rem 6.5rem;
   background-color: $color-dark;
 }
 
 .recommendations {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10%;
+  grid-template-columns: 3rem repeat(5, minmax(13rem, 1fr)) 3rem;
+  column-gap: 5%;
+
+  &__fill {
+    grid-column: 1 / 2;
+  }
+
+  .heading-secondary {
+    grid-column: 2 / -1;
+  }
+
+  &__arrow {
+    align-self: center;
+    fill: $color-light;
+    opacity: 0.3;
+    transition: opacity 200ms;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--left {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      transform: rotate(180deg);
+    }
+
+    &--right {
+      grid-row: 2 / 3;
+      grid-column: -1 / -2;
+    }
+  }
 }
 
 /************ Footer ************/

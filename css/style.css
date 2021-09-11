@@ -99,6 +99,7 @@ body {
   background-color: #EDEDED;
   color: initial;
   box-shadow: 0 0.7rem 2rem rgba(218, 0, 55, 0.4);
+  transition: all 200ms;
 }
 .card__img {
   margin-bottom: 0.5rem;
@@ -114,6 +115,9 @@ body {
 }
 .card__text {
   font-size: 0.75rem;
+}
+.card:hover {
+  transform: scale(1.05);
 }
 
 /******** Header Section ********/
@@ -190,34 +194,45 @@ body {
 
 /******** About Section *********/
 .section-about {
-  display: flex;
-  justify-content: space-around;
-  padding: 5rem 2rem;
+  margin: 5rem 13rem;
+  padding: 5rem;
+  border: 3px solid #171717;
+  position: relative;
 }
-.section-about__bass-clef {
-  align-self: end;
+
+.bass-clef__wrap {
+  position: absolute;
+  bottom: 0;
+  left: -6.5rem;
   width: 14rem;
+  background-color: #EDEDED;
+}
+.bass-clef__icon {
   filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.35));
-  transform: rotate(3deg);
   transition: transform 200ms;
 }
-.section-about__bass-clef:hover {
-  fill: #DA0037;
-  transform: rotate(-5deg) scale(1.1);
-}
-.section-about__treble-clef {
-  align-self: start;
-  width: 10rem;
-  filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.35));
-  transform: rotate(-6deg);
-  transition: transform 200ms;
-}
-.section-about__treble-clef:hover {
+.bass-clef__icon:hover {
   fill: #DA0037;
   transform: rotate(6deg) scale(1.1);
 }
-.section-about__main {
-  padding: 5rem 3rem;
+
+.treble-clef__wrap {
+  position: absolute;
+  top: 0;
+  right: -5rem;
+  background-color: #EDEDED;
+  padding-top: 1.3rem;
+  width: 10rem;
+  height: 18.5rem;
+}
+.treble-clef__icon {
+  align-self: start;
+  filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.35));
+  transition: transform 200ms;
+}
+.treble-clef__icon:hover {
+  fill: #DA0037;
+  transform: rotate(-6deg) scale(1.1);
 }
 
 .paragraph {
@@ -253,6 +268,7 @@ body {
 .composition__photo--1 {
   z-index: 8;
   left: 12rem;
+  transform: scale(0.95);
 }
 .composition__photo--2 {
   z-index: 10;
@@ -261,7 +277,8 @@ body {
 .composition__photo--3 {
   z-index: 9;
   top: 3rem;
-  right: 11rem;
+  right: 12rem;
+  transform: scale(0.97);
 }
 
 /******* Stories Section ********/
@@ -273,7 +290,7 @@ body {
 
 .stories {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, minmax(14rem, 1fr));
   column-gap: 10%;
   row-gap: 2.5rem;
   margin-bottom: 3rem;
@@ -313,14 +330,38 @@ body {
 
 /**** Recommendations Section ***/
 .section-recommendations {
-  padding: 3rem 13% 6.5rem;
+  padding: 3rem 3rem 6.5rem;
   background-color: #171717;
 }
 
 .recommendations {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10%;
+  grid-template-columns: 3rem repeat(5, minmax(13rem, 1fr)) 3rem;
+  column-gap: 5%;
+}
+.recommendations__fill {
+  grid-column: 1/2;
+}
+.recommendations .heading-secondary {
+  grid-column: 2/-1;
+}
+.recommendations__arrow {
+  align-self: center;
+  fill: #EDEDED;
+  opacity: 0.3;
+  transition: opacity 200ms;
+}
+.recommendations__arrow:hover {
+  opacity: 1;
+}
+.recommendations__arrow--left {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  transform: rotate(180deg);
+}
+.recommendations__arrow--right {
+  grid-row: 2/3;
+  grid-column: -1/-2;
 }
 
 /************ Footer ************/
