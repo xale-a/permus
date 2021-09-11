@@ -1,0 +1,343 @@
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50vw);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(13rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-13rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  background-color: #EDEDED;
+  color: #171717;
+}
+
+/*********** Headings ***********/
+.heading-secondary {
+  margin-bottom: 3.5rem;
+  text-align: left;
+  font-family: "Lora", serif;
+  font-size: 2.5rem;
+  color: #DA0037;
+}
+
+.heading-teriary {
+  cursor: default;
+  font-family: "Lora", serif;
+  font-size: 1.5rem;
+  transition: transform 200ms;
+}
+.heading-teriary:hover {
+  color: #DA0037;
+  transform: scale(1.05);
+}
+
+/************ Buttons ************/
+.button-primary:link, .button-primary:visited {
+  display: inline-block;
+  padding: 1em 2em;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 200ms;
+}
+.button-primary:hover {
+  filter: brightness(0.9);
+}
+.button-primary--accent {
+  background-color: #DA0037;
+  color: #171717;
+  box-shadow: 0 0.7rem 2rem rgba(218, 0, 55, 0.4);
+}
+.button-primary--light {
+  border: 2px solid;
+  background-color: #EDEDED;
+  color: #171717;
+  box-shadow: 0 0.7rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+/************ Cards *************/
+.card {
+  padding: 0.9rem 1rem 1.3rem;
+  border-radius: 3px;
+  background-color: #EDEDED;
+  color: initial;
+  box-shadow: 0 0.7rem 2rem rgba(218, 0, 55, 0.4);
+}
+.card__img {
+  margin-bottom: 0.5rem;
+  width: 9rem;
+  border-radius: 100px;
+}
+.card__name {
+  font-weight: 400;
+}
+.card__title {
+  margin-bottom: 0.9rem;
+  font-weight: 600;
+}
+.card__text {
+  font-size: 0.75rem;
+}
+
+/******** Header Section ********/
+.header {
+  position: relative;
+  height: 100vh;
+  background-color: #000;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #EDEDED;
+}
+.header__title {
+  cursor: default;
+  z-index: 10;
+  position: absolute;
+  bottom: 12vh;
+  left: 7%;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.4;
+}
+.header__title--title {
+  display: block;
+  font-family: "Lora", serif;
+  font-weight: 200;
+  font-size: 8rem;
+  color: #DA0037;
+  animation-name: slideInFromRight;
+  animation-duration: 1200ms;
+  animation-timing-function: ease-out;
+}
+.header__title--sub {
+  display: block;
+  font-size: 2.3rem;
+  font-weight: 300;
+  animation-name: slideInFromBottom;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+}
+.header__slogan {
+  cursor: default;
+  z-index: 10;
+  position: absolute;
+  top: 15vh;
+  left: 7%;
+  font-family: "WindSong", cursive;
+  font-size: 2.5rem;
+  font-style: italic;
+  animation-name: slideInFromTop;
+  animation-duration: 800ms;
+  animation-timing-function: ease-out;
+}
+
+.nav {
+  z-index: 10;
+  position: absolute;
+  right: 4rem;
+  top: 2rem;
+}
+.nav__link:link, .nav__link:visited {
+  padding: 1rem;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #EDEDED;
+  opacity: 0.5;
+  transition: opacity 200ms;
+}
+.nav__link:hover {
+  color: #DA0037;
+  opacity: 1;
+}
+
+/******** About Section *********/
+.section-about {
+  display: flex;
+  justify-content: space-around;
+  padding: 5rem 2rem;
+}
+.section-about__bass-clef {
+  align-self: end;
+  width: 14rem;
+  filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.35));
+  transform: rotate(3deg);
+  transition: transform 200ms;
+}
+.section-about__bass-clef:hover {
+  fill: #DA0037;
+  transform: rotate(-5deg) scale(1.1);
+}
+.section-about__treble-clef {
+  align-self: start;
+  width: 10rem;
+  filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.35));
+  transform: rotate(-6deg);
+  transition: transform 200ms;
+}
+.section-about__treble-clef:hover {
+  fill: #DA0037;
+  transform: rotate(6deg) scale(1.1);
+}
+.section-about__main {
+  padding: 5rem 3rem;
+}
+
+.paragraph {
+  margin: 1.6rem 0;
+  font-size: 1.1rem;
+}
+.paragraph strong {
+  cursor: default;
+  display: inline-block;
+  transition: transform 200ms;
+}
+.paragraph strong:hover {
+  color: #DA0037;
+  transform: scale(1.05);
+}
+
+.composition {
+  margin: 12rem 0 8rem;
+  position: relative;
+}
+.composition__photo {
+  width: 22rem;
+  position: relative;
+  transition: all 200ms;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+.composition__photo:hover {
+  transform: scale(1.05);
+  outline-offset: 0.3rem;
+  outline: 0.5rem solid #DA0037;
+  z-index: 12;
+}
+.composition__photo--1 {
+  z-index: 8;
+  left: 12rem;
+}
+.composition__photo--2 {
+  z-index: 10;
+  top: -7rem;
+}
+.composition__photo--3 {
+  z-index: 9;
+  top: 3rem;
+  right: 11rem;
+}
+
+/******* Stories Section ********/
+.section-stories {
+  padding: 3rem 13% 6.5rem;
+  background-color: #171717;
+  color: #EDEDED;
+}
+
+.stories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 10%;
+  row-gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+.stories__see-more:link, .stories__see-more:visited {
+  grid-column: -2/-1;
+  justify-self: end;
+  margin-top: -1.5rem;
+  text-decoration: none;
+  color: #DA0037;
+  transition: all 100ms;
+}
+.stories__see-more:hover {
+  background-color: #DA0037;
+  color: #171717;
+}
+
+/******** Offers Section ********/
+.section-offers {
+  padding: 0 15% 6.5rem;
+}
+
+.offer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  align-items: center;
+}
+.offer__img {
+  width: 30rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+.offer__text {
+  width: 30rem;
+}
+
+/**** Recommendations Section ***/
+.section-recommendations {
+  padding: 3rem 13% 6.5rem;
+  background-color: #171717;
+}
+
+.recommendations {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10%;
+}
+
+/************ Footer ************/
+.footer {
+  padding: 0 15%;
+  background-color: #171717;
+  color: #DA0037;
+}
+
+.disclamer {
+  padding: 1rem 0 0.6rem;
+  font-size: 0.7rem;
+  border-top: 1px solid rgba(218, 0, 55, 0.5);
+}
+
+.copyright {
+  padding-bottom: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+{
+  "name": "permus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch-sass": "sass ./sass/style.scss ./css/style.css --watch",
+    "start": "concurrently -n http,sass \"five-server --port=8080\" \"npm:watch-sass\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "five-server": "0.0.28",
+    "sass": "^1.39.2"
+  }
+}
