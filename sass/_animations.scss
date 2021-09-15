@@ -1,0 +1,39 @@
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50vw);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(13rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-13rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

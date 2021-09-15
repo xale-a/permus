@@ -1,0 +1,145 @@
+.header {
+  position: relative;
+  height: 100vh;
+  background-color: #000; // For loading
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  color: $color-text-light;
+
+  @media only screen and (max-width: $bp-small) {
+    height: 87vh;
+    background-image: url(../img/hero-vertical.jpg);
+  }
+
+  &__title {
+    cursor: default;
+    z-index: 10;
+    position: absolute;
+    bottom: 12vh;
+    left: 7%;
+    font-family: $font-primary;
+    line-height: 1.4;
+
+    @media only screen and (max-width: $bp-small) {
+      left: 50%;
+      bottom: 5%;
+      transform: translateX(-50%);
+    }
+
+
+    &--title {
+      display: block;
+      font-family: $font-display;
+      font-weight: 200;
+      font-size: 8rem;
+      color: $color-accent;
+
+      animation-name: slideInFromRight;
+      animation-duration: 1200ms;
+      animation-timing-function: ease-out;
+
+      @media only screen and (max-width: $bp-medium) {
+        font-size: 7rem;
+      }
+
+      @media only screen and (max-width: $bp-very-small) {
+        font-size: 6rem;
+      }
+    }
+
+    &--sub {
+      display: block;
+      font-size: 2.3rem;
+      font-weight: 300;
+
+      animation-name: slideInFromBottom;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+
+      @media only screen and (max-width: $bp-medium) {
+        font-size: 2rem;
+      }
+
+      @media only screen and (max-width: $bp-very-small) {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  &__slogan {
+    cursor: default;
+    z-index: 10;
+    position: absolute;
+    top: 15vh;
+    left: 7%;
+    font-family: $font-handwriting;
+    font-size: 2.5rem;
+    font-style: italic;
+
+    animation-name: slideInFromTop;
+    animation-duration: 800ms;
+    animation-timing-function: ease-out;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2rem;
+    }
+    
+    @media only screen and (max-width: $bp-small) {
+      right: 10%;
+      left: 10%;
+      top: 20%;
+    }
+
+    @media only screen and (max-width: $bp-very-small) {
+      right: 1rem;
+      left: 1rem;
+      top: 23%;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.nav {
+  z-index: 10;
+  position: absolute;
+  right: 4rem;
+  top: 2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    right: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-very-small) {
+    right: 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      padding: 1rem;
+      text-decoration: none;
+      font-family: $font-primary;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: $color-text-light;
+      opacity: 0.5;
+      transition: opacity 200ms;
+
+      @media only screen and (max-width: $bp-small) {
+        opacity: 0.7;
+        padding: 0.7rem;
+      }
+    }
+
+    &:hover {
+      color: $color-accent;
+      opacity: 1;
+
+      @media only screen and (max-width: $bp-small) {
+        color: currentColor;
+        opacity: 0.7;
+      }
+    }
+  }
+}

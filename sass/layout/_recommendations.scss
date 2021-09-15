@@ -1,0 +1,118 @@
+.section-recommendations {
+  padding: 3rem 3rem 5.5rem;
+  background-color: $color-dark;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding-bottom: 4.5rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding-bottom: 3.5rem;
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  @media only screen and (max-width: $bp-very-small) {
+    padding: 2.2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+
+.recommendations {
+  display: grid;
+  grid-template-columns: 3rem repeat(5, minmax(13rem, 1fr)) 3rem;
+  column-gap: 5%;
+
+  @media only screen and (max-width: $bp-medium-large) {
+    grid-template-columns: 3rem repeat(4, minmax(13rem, 1fr)) 3rem;
+
+    .card--5 {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: $bp-medium-small) {
+    grid-template-columns: 3rem repeat(3, minmax(13rem, 1fr)) 3rem;
+
+    .card--4 {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    column-gap: 4%;
+  }
+
+  @media only screen and (max-width: $bp-medium-small) {
+    column-gap: 5%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2.5rem;
+
+    .card--4 {
+      display: grid;
+    }
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+
+    .card--4 {
+      display: none;
+    }
+  }
+
+  .heading-secondary {
+    grid-column: 2 / -1;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1 / -1;
+      margin-bottom: 0.5rem;
+    }
+
+    @media only screen and (max-width: $bp-very-small) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__fill {
+    grid-column: 1 / 2;
+
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    align-self: center;
+    fill: $color-light;
+    opacity: 0.3;
+    transition: opacity 200ms;
+
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--left {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      transform: rotate(180deg);
+    }
+
+    &--right {
+      grid-row: 2 / 3;
+      grid-column: -1 / -2;
+    }
+  }
+}

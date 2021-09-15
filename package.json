@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch-sass": "sass ./sass/style.scss ./css/style.css --watch",
+    "watch-sass": "sass ./sass/main.scss ./css/style.css --watch",
     "five-server": "five-server --port=8080",
     "start": "run-p watch-sass five-server",
-    "compile-sass": "sass sass/style.scss css/style.comp.css",
+    "compile-sass": "sass sass/main.scss css/style.comp.css",
     "prefix-css": "postcss -u autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
     "compress-css": "sass css/style.prefix.css css/style.css --style=compressed",
     "clean-up": "rm css/style.comp.css css/style.comp.css.map css/style.prefix.css css/style.css.map",

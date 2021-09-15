@@ -1,0 +1,95 @@
+.section-stories {
+  padding: 3rem 13% 6.5rem;
+  background-color: $color-dark;
+  color: $color-text-light;
+
+  @media only screen and (max-width: $bp-medium-large) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  @media only screen and (max-width: $bp-medium-small) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+
+  @media only screen and (max-width: $bp-very-small) {
+    padding: 2.2rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.stories {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(14rem, 1fr));
+  column-gap: 10%;
+  row-gap: 2.5rem;
+  margin-bottom: 3rem;
+
+  @media only screen and (max-width: $bp-medium-large) {
+    column-gap: 7%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(3, minmax(14rem, 1fr));
+    column-gap: 9%;
+
+    .card--4 {
+      display: none;
+    }
+
+    .card--8 {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5rem;
+    row-gap: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    grid-template-columns: 1fr;
+
+    .card--1 {
+      display: none;
+    }
+
+    .card--5 {
+      display: none;
+    }
+  }
+
+  &__see-more {
+    &:link,
+    &:visited {
+      grid-column: -2 / -1;
+      justify-self: end;
+      margin-top: -1.5rem;
+      text-decoration: none;
+      color: $color-accent;
+      transition: all 100ms;
+    }
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-text-dark;
+    }
+  }
+}
