@@ -5,13 +5,22 @@
   "main": "index.js",
   "scripts": {
     "watch-sass": "sass ./sass/style.scss ./css/style.css --watch",
-    "start": "concurrently -n http,sass \"five-server --port=8080\" \"npm:watch-sass\""
+    "five-server": "five-server --port=8080",
+    "start": "run-p watch-sass five-server",
+    "compile-sass": "sass sass/style.scss css/style.comp.css",
+    "prefix-css": "postcss -u autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress-css": "sass css/style.prefix.css css/style.css --style=compressed",
+    "clean-up": "rm css/style.comp.css css/style.comp.css.map css/style.prefix.css css/style.css.map",
+    "build": "run-s compile-sass prefix-css compress-css clean-up"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^6.2.1",
+    "autoprefixer": "^10.3.4",
     "five-server": "0.0.28",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
     "sass": "^1.39.2"
   }
 }
