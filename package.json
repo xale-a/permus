@@ -1,7 +1,7 @@
 {
   "name": "permus",
   "version": "1.0.0",
-  "description": "",
+  "description": "Landing page for fictional music school.",
   "main": "index.js",
   "scripts": {
     "watch-sass": "sass ./sass/main.scss ./css/style.css --watch",
@@ -14,8 +14,12 @@
     "clean-up": "rm css/style.comp.css css/style.comp.css.map css/style.prefix.css css/style.css.map",
     "build": "run-s compile-sass prefix-css compress-css clean-up"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Aleksa Nikolić",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xale-a/permus.git"
+  },
   "devDependencies": {
     "autoprefixer": "^10.3.4",
     "five-server": "0.0.28",
